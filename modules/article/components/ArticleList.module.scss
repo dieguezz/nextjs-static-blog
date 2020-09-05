@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+
+.title {
+  font-size: 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $charcoal;
+  margin-bottom: 16px;
+}
+
+.item {
+  margin-bottom: 16px;
+  max-width: 550px;
+  background-color: $sandyBrown;
+  padding: 24px 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+    font-size: 14px;
+    color: $charcoal;
+    line-height: 1.5em;
+}

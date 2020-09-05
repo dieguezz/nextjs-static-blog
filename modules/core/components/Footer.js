@@ -1,3 +1,5 @@
+import styles from "./Footer.module.scss";
+
 export default function Footer() {
-    return <div>I am the footer</div>
+  return <footer className={styles.root}>® Awesome friends company</footer>;
 }

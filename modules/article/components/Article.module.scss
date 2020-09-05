@@ -1,0 +1,26 @@
+@import '../../../styles/variables.scss';
+
+.title {
+    color: $charcoal;
+    font-weight: 600;
+    font-size: 24px;
+    background-color: $burntSienna;
+    padding: 24px;
+    text-transform: uppercase;;
+}
+
+.body {
+    color: $charcoal;
+    margin: 16px 0;
+    line-height: 1.5em;
+
+    p {
+        margin-bottom: 16px;
+        background-color: $orangeYellowCrayola;
+        padding: 24px;
+    }
+
+    img {
+        display: block;
+    }
+}

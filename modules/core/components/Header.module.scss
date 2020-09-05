@@ -1,0 +1,27 @@
+@import "../../../styles/variables.scss";
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  background-color: $charcoal;
+  border-bottom: 8px solid $burntSienna;
+}
+
+.title {
+  font-size: 32px;
+  text-decoration: none;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $burntSienna;
+  transition: color .25s ease-in;
+  text-shadow: -4px -4px 0px darken($charcoal, 20%);
+  &:hover {
+      color: darken($burntSienna, 20%);
+  }
+  &:focus {
+    outline: none;
+  }
+}

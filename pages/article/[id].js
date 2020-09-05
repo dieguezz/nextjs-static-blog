@@ -1,30 +1,39 @@
-import { useRouter } from "next/router";
-import Article from "../../modules/article/components/article.component";
-import { getAll, getByCanonical } from "../../modules/article/services/article.service";
-import marked from 'marked'
+import marked from "marked";
+
+import Article from "../../modules/article/components/Article";
+import {
+  getAll,
+  getByCanonical,
+} from "../../modules/article/services/article.service";
+import Head from "next/head";
 
 export default function article({ article }) {
-  const router = useRouter();
-  const { id } = router.query;
+  return (
+    <div>
+      <Head>
+        <title>{article.title}</title>
+      </Head>
+      <main>
+        <Article {...article}></Article>
+      </main>
 
-  console.log('THE ARTICLE?', article)
-
-  return <Article {...article}></Article>;
+    </div>
+  );
 }
 
 export async function getStaticPaths() {
-    const articles = await getAll()
-  
-    const paths = articles.map((article) => ({
-      params: { id: article.canonical },
-    }))
-  
-    return { paths, fallback: false }
-  }
-  
-  export async function getStaticProps({ params }) {
-    const article = await getByCanonical(params.id)
-    const body = marked(article.body, { baseUrl: process.env.STRAPI_HOST })
-  
-    return { props: { article: { ...article, body} } }
-  }
+  const articles = await getAll();
+
+  const paths = articles.map((article) => ({
+    params: { id: article.canonical },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const article = await getByCanonical(params.id);
+  const body = marked(article.body, { baseUrl: process.env.STRAPI_HOST });
+
+  return { props: { article: { ...article, body } } };
+}
