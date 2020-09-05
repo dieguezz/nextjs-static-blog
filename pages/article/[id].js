@@ -24,7 +24,7 @@ export async function getStaticPaths() {
   
   export async function getStaticProps({ params }) {
     const article = await getByCanonical(params.id)
-    const body = marked(article.body, { baseUrl: 'http://localhost:1337' })
+    const body = marked(article.body, { baseUrl: process.env.STRAPI_HOST })
   
     return { props: { article: { ...article, body} } }
   }

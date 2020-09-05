@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
 export default new ApolloClient({
-    uri: 'http://localhost:1337/graphql',
+    uri: `${process.env.STRAPI_HOST}/graphql`,
     cache: new InMemoryCache()
 })
