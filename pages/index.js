@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.scss";
 import ArticleList from "../modules/article/components/ArticleList";
 import { getAll } from "../modules/article/services/article.service";
 
-export default function Home({ articles }) {
+export default function HomePage({ articles }) {
   return (
     <div className={styles.container}>
       <Head>

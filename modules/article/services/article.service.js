@@ -32,7 +32,6 @@ export async function getByCanonical(canonical) {
       `,
     })
     .then((result) => {
-      console.log(result.data)
       return result.data.articleByCanonical;
     });
 }
